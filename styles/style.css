@@ -1,38 +1,316 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+ /* стили для всего контейнера */
+.content {
+  display: flex;
+  justify-content: cente;
+  inline-size: 1140px;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 30px;
+  margin-block-start: 133px;
+
+
 }
 
-html {
-  block-size: 100%;
+ /* стили для результата и видео и формы */
+
+.result {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 78px;
+  }
+  
+  /* стили для видео */
+
+
+.result__video-container {
+  position: relative;
+  display: block;
+  block-size: 386px;
+  min-inline-size: 711px;
+  margin-block-end: 16px;
 }
 
-.page {
-  inline-size: 1200px;
+
+.result__video{
   block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  min-inline-size: 100%;
+  object-fit: cover;
+  object-position: 100%;
+}
+  
+   /* стили для форм */
+
+.search-form{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.search-form__textfield {
+  appearance: none;
+  font-family: inherit;
   font-size: 18px;
-  background-color: #1b1919;
+  line-height: 21.6px;
+  color: rgba(255, 255, 255, 0.7);
+  border: transparent;
+  outline: transparent;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+  cursor: auto;
+  padding: 2.5px 0 2.5px 0;
+  min-inline-size: 225px;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
+.search-form__textfield:focus {
+  outline: none;
+  background-color: transparent;
+  }
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-ul,
-ol {
-  list-style: none;
+.search-form__fieldset {
+  border: transparent;
+}
+
+.search-form__fieldset-title{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: rgba(255, 255, 255, 1);
+  padding-block-end: 5px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color:#fff;
+  gap: 15px;
+  padding-block-end: 5px;
+}
+
+.search-form__label{
+  display: flex;
+  flex-direction: row;
+  inline-size: fit-content;
+  cursor: pointer;
+  justify-content: center;
+  gap: 5px;
+}
+
+.search-form__label:has( :focus) {
+  outline: transparent;  
+}
+
+.search-form__label:has( :focus-visible) {
+  outline: 1px solid #fff; 
+  outline-offset: 1px;
+}
+
+.search-form__pseudo-checkbox {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 19px;
+  block-size: 19px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  inline-size: 15px;
+  block-size: 15px;
+  background-color: #fff;
+}
+
+.search-form__label-text:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* стили для кнопок */
+  
+.button {
+  position: relative;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  cursor: pointer;
+}
+
+.search-form__submit-button{
+  font-family: inherit;
+  inline-size: 194px;
+  padding: 6px 73.5px;
+  margin-top: 20px;
+}
+
+.search-form__submit-button:active {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.search-form__submit-button:hover {
+  text-decoration: underline; 
+}
+
+.search-form__submit-button:focus {
+ outline: transparent;
+}
+
+.search-form__submit-button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.more-button {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  padding: 6px 146.5px;
+  white-space: nowrap;
+  max-inline-size: 399px;
+}
+
+/* стили для блока с титулом и карточками городов */
+
+.content__details {
+  block-size: 100%;
+  max-inline-size: 100%;
+}
+
+/* стили для заголовка посмотри в окно */
+.title {
+  font-family: Oswald, sans-serif;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70.5px;
+  text-align: left;
+  text-transform: uppercase;
+  padding-inline-end: 139px;
+  padding-block-end: 26px;
+  }
+  
+  .content__accent{
+    color: rgba(84, 80, 80, 1);
+  }
+
+    /* стили для карточек городов */
+
+.content__list {
+  position: relative;
+  block-size: 298px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  border: transparent;
+}
+
+.content__list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__list-item:not(:last-child) {
+  margin-block-end: 30px;
+}
+
+.content__list-item:not(:last-child) {
+  padding-inline-end: 1px;
+}
+
+.content__video-card {
+  display: flex;
+  cursor: pointer;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  display: block;
+  margin: 2px;
+}
+
+.content__card-link_current {
+  background: rgba(84, 80, 80, 1);
+}
+
+.content__card-link:focus {
+  border: transparent;
+  outline: transparent;
+}
+
+.content__list-item:has(:focus-visible) {
+  border: 1px solid #fff;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+.content__video-card-thumbnail{
+  display: block;
+  block-size: 103px;
+  min-inline-size: 194px;
+ 
+  align-items: flex-end;
+  flex-grow: 1;
+  flex-shrink: 0;
+  object-fit: cover;
+  padding-block-start: 2px;
+  padding-inline-end: 2px;
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-block-end: 6px;
+  text-underline-offset: 0;
+  max-inline-size: 200px;
+}
+
+.content__video-card-description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.content__video-card-description-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column; 
+  block-size: 101px;
+  min-inline-size: 200px;
+  text-overflow: ellipsis;
+  align-items: start;
 }
