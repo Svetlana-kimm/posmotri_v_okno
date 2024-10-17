@@ -221,7 +221,7 @@
   justify-content: space-between;
   block-size: 298px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   border: transparent;
 }
 
@@ -278,6 +278,7 @@
   flex-grow: 1;
   flex-shrink: 0;
   object-fit: cover;
+  object-position: center;
   padding-block-start: 2px;
   padding-inline-end: 2px;
 }
